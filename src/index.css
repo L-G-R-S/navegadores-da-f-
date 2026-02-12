@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-title: 'Cinzel', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --color-nav-blue: #0f172a;
+  --color-nav-gold: #fbbf24;
+  --color-nav-dark: #020617;
+  --color-primary: #0f172a;
+  --color-secondary: #fbbf24;
+  --color-accent: #fbbf24;
+}
+
+:root {
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-nav-dark);
+  color: white;
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.glass-effect {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--color-secondary) !important;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--color-nav-gold) !important;
+  opacity: 1;
+  width: 24px;
+  border-radius: 5px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--color-nav-gold) !important;
+}
