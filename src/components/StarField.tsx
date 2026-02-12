@@ -78,7 +78,10 @@ export const StarField = () => {
 
         const initParticles = () => {
             particles = [];
-            const numberOfParticles = (canvas.width * canvas.height) / 9000;
+            // Reduce particle count significantly for better performance
+            // Desktop: ~1 particle per 9000px, Mobile: ~1 per 15000px
+            const divider = window.innerWidth < 768 ? 20000 : 9000;
+            const numberOfParticles = (canvas.width * canvas.height) / divider;
             for (let i = 0; i < numberOfParticles; i++) {
                 particles.push(new Particle());
             }

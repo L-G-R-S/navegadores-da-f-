@@ -89,6 +89,7 @@ export const TeamCarousel = () => {
                                     <img
                                         src={member.image}
                                         alt={member.name}
+                                        loading="lazy"
                                         className="w-full h-full object-contain"
                                         onError={(e) => {
                                             (e.target as HTMLImageElement).src = 'https://via.placeholder.com/300x400?text=Foto+Indispon%C3%ADvel';
