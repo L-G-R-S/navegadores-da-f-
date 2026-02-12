@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Play, Pause, SkipBack, SkipForward, Music } from 'lucide-react';
+import { Play, Pause, SkipBack, SkipForward } from 'lucide-react';
 
 interface Track {
     id: number;
@@ -25,7 +25,6 @@ export const MusicPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
     const [progress, setProgress] = useState(0);
-    const [duration, setDuration] = useState(0);
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     const currentTrack = playlist[currentTrackIndex];
@@ -45,7 +44,6 @@ export const MusicPlayer = () => {
         const updateProgress = () => {
             if (audio.duration) {
                 setProgress((audio.currentTime / audio.duration) * 100);
-                setDuration(audio.duration);
             }
         };
 
